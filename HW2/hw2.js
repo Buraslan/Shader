@@ -36,9 +36,7 @@ window.onload = function init()
     gl = WebGLUtils.setupWebGL( canvas );
     if ( !gl ) { alert( "WebGL isn't available" ); }
 
-    //
-    //  Configure WebGL
-    //
+  
     gl.viewport( 0, 0, canvas.width, canvas.height );
     gl.clearColor( 1.0, 1.0, 1.0, 1.0 );
 
@@ -88,55 +86,48 @@ window.onload = function init()
         init();
     };  
     document.getElementById("redSlider").oninput = function(event) {
-        //TODO: fill here to adjust color according to slider value
         red = event.target.value;
         color = vec4(red+red,green,blue,1.0);
         init();
     };
     document.getElementById("greenSlider").oninput = function(event) {
-        //TODO: fill here to adjust color according to slider value
         green = event.target.value;
         color = vec4(red,green+green,blue,1.0);
         init();
     };
     document.getElementById("blueSlider").oninput = function(event) {
-        //TODO: fill here to adjust color according to slider value
         blue = event.target.value;
         color = vec4(red,green,blue+blue,1.0);
         init();
     };
 	document.getElementById("theta1").onclick = function(event) {
-        //TODO: fill here to adjust resolution of the ellipse
+       
         theta = parseFloat(event.target.value);
         init();
     };	
 	document.getElementById("theta2").onclick = function(event) {
-        //TODO: fill here to adjust resolution of the ellipse
+       
         theta = parseFloat(event.target.value);
         init();
     };
 	document.getElementById("theta3").onclick = function(event) {
-        //TODO: fill here to adjust resolution of the ellipse 
         theta = parseFloat(event.target.value);
         init();
     };	
 	document.getElementById("theta4").onclick = function(event) {
-        //TODO: fill here to adjust resolution of the ellipse
+        
         theta = parseFloat(event.target.value);
         init();
     };	
 	document.getElementById("theta5").onclick = function(event) {
-        //TODO: fill here to adjust resolution of the ellipse
         theta = parseFloat(event.target.value);
         init();
     };	
 	document.getElementById("xrSlider").oninput = function(event) {
-        //TODO: fill here to adjust x radius of the ellipse
         xr =  event.target.value;
         init();
     };	
 	document.getElementById("yrSlider").oninput = function(event) {
-        //TODO: fill here to adjust y radius of the ellipse
         yr =  event.target.value;
         init();
     };	
@@ -152,10 +143,8 @@ window.onload = function init()
 
 
 function render() {
-	//TODO: send necessary variables to shader, draw call, swap buffers
     gl.clear( gl.COLOR_BUFFER_BIT );
 
-    
     colorLoc = gl.getUniformLocation(program,"color");
 	gl.uniform4fv(colorLoc,color);
 
